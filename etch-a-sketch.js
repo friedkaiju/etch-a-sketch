@@ -1,24 +1,30 @@
-//create a 16x16 grid of square divs using dom techniques
+let userGridRow = 0;
+const button = document.querySelector("button")
+const parentGridContainer = document.querySelector("#parentGridContainer")
 const gridContainer = document.querySelector("#gridContainer")
 
-const gridRow1 = document.createElement("div");
-    gridRow1.classList.add("gridRow");
-gridContainer.appendChild(gridRow1)
+button.addEventListener("click", () => {
+    let userGridRow = parseInt(prompt("how many squares per side should the grid be?", "16"), 10)
+    generateCanvas(userGridRow)
+    }
+)
+//create a container for a 16x16 grid of square divs using only dom techniques
 
-const gridSquare1 = document.createElement("div");
-    gridSquare1.classList.add("gridSquare");
-    const gridText1 = document.createTextNode("i'm in a div!");
-    gridSquare1.appendChild(gridText1)
-gridRow1.appendChild(gridSquare1)
-
-const gridSquare2 = document.createElement("div");
-    gridSquare2.classList.add("gridSquare");
-    const gridText2 = document.createTextNode("i'm in a div!");
-    gridSquare2.appendChild(gridText2)
-gridRow1.appendChild(gridSquare2)
-
-const gridSquare3 = document.createElement("div");
-    gridSquare3.classList.add("gridSquare");
-    const gridText3 = document.createTextNode("i'm in a div!");
-    gridSquare3.appendChild(gridText3)
-gridRow1.appendChild(gridSquare3)
+const generateCanvas = (userGridRow) =>  {
+    for (let i = 0; i < userGridRow; i++) {
+        for (let j = 0; j < userGridRow; j++) {
+    //creates 16x16 divs in a row
+            const gridRow = document.createElement("div");
+            gridRow.classList.add("gridRow");
+            gridContainer.appendChild(gridRow)
+    //creates a div to contain the row and appends it to the container
+            const gridSquare = document.createElement("div");
+            gridSquare.classList.add("gridSquare");
+            gridRow.appendChild(gridSquare)
+            gridSquare.addEventListener("mouseover", () => {
+                gridSquare.style.backgroundColor = 'rgb(187, 255, 0)'
+            });
+    //creates divs within the row and appends it to the row
+        }
+    }
+}

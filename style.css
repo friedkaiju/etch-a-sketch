@@ -1,3 +1,10 @@
+#body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+}
+
 .title {
     display: flex;
     justify-content: center;
@@ -5,9 +12,24 @@
 
 #gridContainer {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 710px;
+    justify-content: center;
+    padding: 6px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+}
+
+.gridRow {
+    display: flex;
+    padding: 5px;
 }
 
 .gridSquare {
-    border: 2px, solid, black;
+    border: 2px, solid, rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 15px;
 }
+/*.gridSquare:hover {
+    background-color: rgb(187, 255, 0);
+}*/
