@@ -5,12 +5,16 @@
     flex-direction: column;
 }
 
+#generateButton {
+    margin: 6px;
+}
+
 .title {
     display: flex;
     justify-content: center;
 }
 
-#gridContainer {
+#gridContainer, .gridRow {
     display: flex;
     flex-wrap: wrap;
     max-width: 710px;
